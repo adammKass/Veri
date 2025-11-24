@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/*Default and dark Color Palette */
+
+:root {
+  --color-primary: #7b542f;
+  --color-secondary: #b6771d;
+  --color-accent: #ff9d00;
+  --color-accent-light: #ffcf71;
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #3a281a;
+    --color-secondary: #5a3d12;
+    --color-accent: #ff9d00;
+    --color-accent-light: #ffb84d;
+    --color-white: #e6e6e6;
+    --color-black: #0d0d0d;
+  }
+}
+
+/* Font Import */
+
+@font-face {
+  font-family: Urbanist;
+  font-style: normal;
+  font-weight: 300 700;
+  src: url("/fonts/Urbanist-VariableFont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Urbanist;
+  font-style: italic;
+  font-weight: 300 700;
+  src: url("/fonts/Urbanist-Italic-VariableFont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Bodoni Moda;
+  font-style: normal;
+  font-weight: 300 700;
+  src: url("/fonts/BodoniModa-VariableFont.ttf") format("truetype");
+}
+
+/* Declaring variables for Tailwind */
+
+@theme {
+  --font-sans: "Urbanist", sans-serif;
+  --font-serif: "Bodoni Moda", serif;
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+  --color-white: var(--color-white);
+  --color-black: var(--color-black);
+}
+
+/* Default font to serif */
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* Hiding scrollbar for all browsers */
+
+@layer components {
+  /* Content restraint */
+  .content {
+    @apply w-full max-w-7xl mx-auto px-4;
+  }
+}
