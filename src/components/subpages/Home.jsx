@@ -49,10 +49,10 @@ const Home = () => {
       gsap.fromTo(
         imageWrapper,
         {
-          yPercent: -70,
+          yPercent: isMobile ? -30 : -70,
         },
         {
-          yPercent: 80,
+          yPercent: isMobile ? 20 : 80,
           force3D: true,
           ease: "none",
           scrollTrigger: {
@@ -73,7 +73,7 @@ const Home = () => {
         {heroSlides.map((slide, index) => (
           <section
             key={index}
-            className="relative overflow-hidden h-svh flex flex-col justify-end "
+            className="relative overflow-hidden h-lvh flex flex-col justify-end "
           >
             {/* 
             Image Container
