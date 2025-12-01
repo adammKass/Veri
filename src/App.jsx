@@ -15,20 +15,20 @@ const App = () => {
   // useEffect(() => {
   //   function update(time) {
   //     // Smaller number for smoother scrolling
-  //     lenisRef.current?.lenis?.raf(time * 1000);
+  //     lenisRef.current?.lenis?.raf(time * 800);
   //   }
 
   //   gsap.ticker.add(update);
+  //   gsap.ticker.lagSmoothing(0);
 
   //   return () => gsap.ticker.remove(update);
   // }, []);
 
   return (
     <>
-      <ReactLenis root>
-        <Navbar></Navbar>
-        <Home></Home>
-      </ReactLenis>
+      {/* <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} /> */}
+      <Navbar></Navbar>
+      <Home></Home>
     </>
   );
 };

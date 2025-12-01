@@ -72,6 +72,7 @@
 body {
   overflow-x: hidden;
   font-family: var(--font-sans);
+  scroll-behavior: smooth;
 }
 
 /* Hiding scrollbar for all browsers */
