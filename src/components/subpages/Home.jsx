@@ -31,19 +31,20 @@ const Home = () => {
       trigger: "#smooth-content",
       start: "top top",
       end: "bottom bottom",
+
       scrub: 1,
       snap: {
-        snapTo: snapPoints,
+        snapTo: 1 / 3,
         duration: 1,
         ease: "power3.inOut",
         delay: 0,
       },
     });
-
+    ScrollTrigger.config({ limitCallbacks: true });
     // For each section scrollTrigger and Parallax for image
 
     gsap.utils.toArray("section").forEach((section, index) => {
-      const imageWrapper = section.querySelector(".image-container img");
+      const imageWrapper = section.querySelector(".image-container");
 
       gsap.fromTo(
         imageWrapper,
@@ -72,13 +73,13 @@ const Home = () => {
         {heroSlides.map((slide, index) => (
           <section
             key={index}
-            className="relative overflow-hidden h-screen flex flex-col justify-end "
+            className="relative overflow-hidden h-dvh flex flex-col justify-end "
           >
             {/* 
             Image Container
             Bigger Scale for parallax effect 
             */}
-            <div className="image-container absolute inset-0 overflow-hidden">
+            <div className="image-container absolute inset-0 overflow-hidden will-change-transform translate-z-0">
               <img
                 src={isMobile ? slide.imageMobile : slide.image}
                 alt={slide.name}
