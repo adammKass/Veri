@@ -41,6 +41,7 @@ const Home = () => {
       },
     });
     ScrollTrigger.config({ limitCallbacks: true });
+    ScrollTrigger.normalizeScroll(true);
     // For each section scrollTrigger and Parallax for image
 
     gsap.utils.toArray("section").forEach((section, index) => {
