@@ -10,25 +10,25 @@ gsap.registerPlugin(ScrollTrigger, SplitText, ScrollToPlugin);
 const App = () => {
   // Lenis integration with Gsap from documentation
 
-  const lenisRef = useRef();
+  // const lenisRef = useRef();
 
-  useEffect(() => {
-    function update(time) {
-      // Smaller number for smoother scrolling
-      lenisRef.current?.lenis?.raf(time * 800);
-    }
+  // useEffect(() => {
+  //   function update(time) {
+  //     // Smaller number for smoother scrolling
+  //     lenisRef.current?.lenis?.raf(time * 1000);
+  //   }
 
-    gsap.ticker.add(update);
-    gsap.ticker.lagSmoothing(0);
+  //   gsap.ticker.add(update);
 
-    return () => gsap.ticker.remove(update);
-  }, []);
+  //   return () => gsap.ticker.remove(update);
+  // }, []);
 
   return (
     <>
-      <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
-      <Navbar></Navbar>
-      <Home></Home>
+      <ReactLenis root>
+        <Navbar></Navbar>
+        <Home></Home>
+      </ReactLenis>
     </>
   );
 };
