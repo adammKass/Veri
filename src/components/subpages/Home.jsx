@@ -15,17 +15,7 @@ const Home = () => {
   const isMobile = useIsMobile();
 
   useGSAP(() => {
-    // Manual snap points, percentages of whole scroll container (4 sections inside)
-    let snapPoints = [0, 0.33, 0.66, 1];
-
     // ScrollTrigger with snapping points, cant seem to be able to change delay, could have something with lenis
-
-    // ScrollSmoother.create({
-    //   smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
-    //   effects: true, // looks for data-speed and data-lag attributes on elements
-    //   smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
-    //   normalizeScroll: true,
-    // });
 
     ScrollTrigger.create({
       trigger: "#smooth-content",
@@ -34,7 +24,7 @@ const Home = () => {
 
       scrub: 1,
       snap: {
-        snapTo: 1 / 3,
+        snapTo: 1 / 3, // hard coded 4 sections
         duration: 1,
         ease: "power3.inOut",
         delay: 0,
@@ -93,7 +83,9 @@ const Home = () => {
             Text Container
             Bigger Scale for parallax effect 
             */}
-            <div className="content relative flex flex-col justify-end">
+            {/* On mobile portrait slight margin on bottom because mobile navigation
+            hid the text */}
+            <div className="content relative flex flex-col justify-end portrait:mb-[12vh] lg:portrait:mb-0">
               {/* Number of Section Container */}
               <div className="w-fit flex flex-row items-end gap-4 border-b-2 border-white ">
                 <span className="font-spartan font-extralight text-5xl lg:text-9xl text-white  leading-none">
@@ -105,12 +97,12 @@ const Home = () => {
               </div>
 
               {/* Main Text */}
-              <div className="text-white md:self-end text-center flex flex-col md:flex-row items-left md:items-center justify-between py-4 z-80">
-                <h2 className="font-spartan font-bold text-left text-[clamp(2rem,8vw,10rem)] uppercase leading-none z-80 align-baseline">
+              <div className="text-white md:self-end text-center flex flex-col md:flex-row items-left md:items-center justify-between py-4 z-20">
+                <h2 className="font-spartan font-bold text-left text-[clamp(2rem,8vw,10rem)] uppercase leading-none z-20 align-baseline">
                   {slide.name}
                 </h2>
                 <div className="flex flex-col items-end self-start md:self-end">
-                  <p className="text-sm sm:text-base uppercase font-bold max-w-prose z-80 text-left md:text-right mb-0 md:mb-5">
+                  <p className="text-sm sm:text-base uppercase font-bold max-w-prose z-20 text-left md:text-right mb-0 md:mb-5">
                     {slide.subheading}
                   </p>
                 </div>
