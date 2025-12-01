@@ -73,7 +73,7 @@ const Home = () => {
         {heroSlides.map((slide, index) => (
           <section
             key={index}
-            className="relative overflow-hidden h-dvh flex flex-col justify-end "
+            className="relative overflow-hidden h-svh flex flex-col justify-end "
           >
             {/* 
             Image Container
