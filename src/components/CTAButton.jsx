@@ -1,6 +1,6 @@
 import { FiChevronRight } from "react-icons/fi";
 
-//CTA Button on hero section for better code readibility
+//CTA Button, not used at the moment
 
 const CTAButton = ({ path, text }) => {
   return (

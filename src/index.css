@@ -6,13 +6,13 @@
 :root {
   --color-primary: #7b542f;
   --color-secondary: #b6771d;
-  --color-accent: #ff9d00;
+  --color-accent: #13a0ff;
   --color-accent-light: #ffcf71;
   --color-white: #ffffff;
   --color-black: #000000;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --color-primary: #3a281a;
     --color-secondary: #5a3d12;
@@ -21,7 +21,7 @@
     --color-white: #e6e6e6;
     --color-black: #0d0d0d;
   }
-}
+} */
 
 /* Font Import */
 
@@ -46,11 +46,19 @@
   src: url("/fonts/BodoniModa-VariableFont.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: League Spartan;
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("/fonts/LeagueSpartan-VariableFont.ttf") format("truetype");
+}
+
 /* Declaring variables for Tailwind */
 
 @theme {
   --font-sans: "Urbanist", sans-serif;
   --font-serif: "Bodoni Moda", serif;
+  --font-spartan: "League Spartan", serif;
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
   --color-accent: var(--color-accent);
@@ -70,6 +78,6 @@ body {
 @layer components {
   /* Content restraint */
   .content {
-    @apply w-full max-w-7xl mx-auto px-4;
+    @apply w-full max-w-[1400px] mx-auto px-4 lg:px-16;
   }
 }
